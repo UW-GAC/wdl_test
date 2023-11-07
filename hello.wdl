@@ -1,7 +1,7 @@
-version 1.0 
+version 1.0
 
 workflow HelloWorld {
-  call WriteGreeting 
+  call WriteGreeting
 }
 
 task WriteGreeting {
@@ -11,5 +11,9 @@ task WriteGreeting {
 
   output{
     File output_greeting = stdout()
+  }
+
+  runtime{
+    docker: "uwgac/primed-imputation:0.1.0"
   }
 }
